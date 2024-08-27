@@ -7,6 +7,7 @@
     --background-gradient: linear-gradient(to left, #000219, #201b32);
     --primary-accent-color: rgb(126, 217, 208);
     --background-accent-color: rgb(27, 44, 64);
+    --header-font: 'Ubuntu', sans-serif;
 
 }
 
@@ -56,6 +57,8 @@ button {
     padding: 5px 10px;
     background: var(--background-gradient);
     height: 100%;
+    font-family: var(--header-font);
+    font-weight: 700;
 }
 
 header{
@@ -72,7 +75,7 @@ header{
     display: flex;
     align-items: center;
     margin-bottom: 30px;
-    border: 2px solid orange;
+
 
 }
 .header-links a {
@@ -125,7 +128,8 @@ h3 {
 
 .accent {
     color: var(--primary-accent-color);
-    
+    margin-inline: 5px;
+   
 }
 
 ul {
@@ -157,4 +161,15 @@ ul li::marker {
     margin-bottom: 5px;
     margin-right: 5px;
     font-size: 0.8em;
+}
+
+.project-images{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.project-images img {
+    width: 100px;
+    max-height: 100%;
 }
