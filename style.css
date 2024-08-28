@@ -1,12 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Ubuntu:wght@700&display=swap');
 :root {
-    --primary-header-color: rgb(211, 219, 236);
-    --secondary-header-color: rgb(200, 196, 218);
-    --base-text-color: rgb(195, 195, 195, 0.9);
-    --base-text-color: rgb(129, 147, 178);
-    --background-gradient: linear-gradient(to left, #000219, #201b32);
+    /* --primary-header-color: rgb(255, 255, 255);
+    --secondary-header-color: rgb(225, 222, 238);
+   
+    --base-text-color: rgb(195, 199, 206);
+    --background-gradient: linear-gradient(to left, #000536, #120542);
     --primary-accent-color: rgb(126, 217, 208);
-    --background-accent-color: rgb(27, 44, 64);
+    --background-accent-color: rgb(27, 44, 64); */
+
+    --primary-header-color: #f8f9fa;
+    --secondary-header-color: rgb(225, 222, 238);
+   
+    --base-text-color: #adb5bd;
+    --background-gradient: #212529;
+    --primary-accent-color: #FBFEF9;
+    
+    --background-accent-color: #0E79B2;
+    
+    /* --background-accent-color: linear-gradient(to left, #0E79B2, #2449d0); */
+
+
     --header-font: 'Ubuntu', sans-serif;
 
 }
@@ -19,20 +32,31 @@
 }
 
 
+body{
 
-body {
+    height: 100vh;
     background: var(--background-gradient);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+   
     color: var(--base-text-color);
     font-family: 'Open Sans', sans-serif;
-    padding: 10px;
-    
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
    
 }
+
+
 
 h1 {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 200;
-    font-size: 2.5em;
+    font-size: 2.5rem;
     color: var(--primary-header-color);
     margin-bottom: 5px;
 
@@ -40,7 +64,7 @@ h1 {
 
 h2 {
     margin-top: 0;
-    font-size: 1em;
+    font-size: 1rem;
     color: var(--primary-header-color);
 }
 
@@ -61,16 +85,13 @@ button {
     font-weight: 700;
 }
 
-header{
-  max-width: 800px;
-}
 
 .header-information {
     max-width: 300px;
 }
 
 .header-links {
-    max-width: 200px;
+    
     justify-content: start;
     display: flex;
     align-items: center;
@@ -98,22 +119,25 @@ nav ul {
     border: 2px solid var(--primary-header-color);
     padding: 10px;
     border-radius: 10px;
+
     
 }
 
 
-.selected-item {
+
+.selected-item, .selected-item a {
     font-family: 'Ubuntu', sans-serif;
     font-weight: 700;
     color: var(--primary-header-color);
 }
+
 
 .highlight {
     color: var(--primary-header-color);
 }
 
 
-.experience {
+.experience, .project {
     margin-top: 40px;
 }
 
@@ -121,6 +145,7 @@ nav ul {
     font-size: 0.8rem;
     margin: 0;
 }
+
 h3 {
     color: var(--primary-header-color);
     margin-block: 10px;
@@ -141,8 +166,6 @@ ul li {
     margin-top: 5px;
 }
 
-
-
 ul li::marker {
     color: var(--primary-accent-color);
 
@@ -155,7 +178,7 @@ ul li::marker {
 
 .badge {
     color: var(--primary-accent-color);
-    background-color: var(--background-accent-color);
+    background: var(--background-accent-color);
     padding: 5px 10px;
     border-radius: 15px;
     margin-bottom: 5px;
@@ -169,7 +192,109 @@ ul li::marker {
     margin-top: 10px;
 }
 
-.project-images img {
+ img {
     width: 100px;
     max-height: 100%;
+}
+
+.image-horizontal {
+    width: 100%;
+    height: auto;
+
+}
+
+.section-header {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    font-family: var(--header-font);
+    margin-top: 50px;
+    font-size: 1rem;
+}
+
+.section-header h2{
+    margin-bottom: 10px;
+ 
+}
+
+footer{
+    margin-top: 40px;
+    height: 50px;
+    border-top: var(--primary-accent-color) 1px solid;
+    font-size: 0.7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media only screen and (min-width: 701px) {
+
+
+
+    .container {
+     
+        margin-block: 0;
+        padding-block: 0; 
+
+        display: grid;
+        grid-template-columns: minmax(350px, 1fr) 2fr; 
+        grid-template-areas: 
+            "header content"
+            "header footer";
+
+        margin: 0 auto;
+        padding: 0;
+
+        overflow: auto;
+
+        
+    }
+    
+    header {
+        grid-area: header;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        height: 100vh;
+        /* border-right: 1px solid var(--primary-accent-color); */
+        padding: 20px;
+        position: fixed;
+
+        top: 0px;
+   
+
+    }
+
+    .content {
+        grid-area: content;
+
+
+ 
+    }
+
+    .content h2, .content section {
+        padding: 20px;
+    }
+
+    footer {
+        grid-area: footer;
+    }
+
+
+
+    nav ul{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        border: none;
+        align-items: start;
+        justify-content: start;
+    }
+
+
+  
+
+
+
 }
